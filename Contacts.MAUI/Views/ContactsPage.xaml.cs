@@ -2,10 +2,18 @@ namespace Contacts.MAUI.Views;
 
 public partial class ContactsPage : ContentPage
 {
-	public ContactsPage()
-	{
-		InitializeComponent();
-	}
+    public ContactsPage()
+    {
+        InitializeComponent();
+
+        List<dynamic> contacts =
+        [
+            new { Name = "Pepa", Email = "Pepa@ehm.cz"},
+            new { Name = "Arnold", Email = "Arnold@ehm.cz"},
+            new { Name = "Telemín", Email = "Telemín@ehm.cz"}
+        ];
+        contactsList.ItemsSource = contacts;
+    }
 
     private void BtnEditContact_Clicked(object sender, EventArgs e)
     {
