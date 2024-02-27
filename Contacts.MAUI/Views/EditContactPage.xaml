@@ -4,5 +4,6 @@
              x:Class="Contacts.MAUI.Views.EditContactPage"
              Title="EditContactPage">
     <VerticalStackLayout>
+        <Label x:Name="contactName"></Label>
     </VerticalStackLayout>
 </ContentPage>

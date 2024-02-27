@@ -1,3 +1,6 @@
+using Contacts.MAUI.Models;
+using Contact = Contacts.MAUI.Models.Contact;
+
 namespace Contacts.MAUI.Views;
 
 public partial class ContactsPage : ContentPage
@@ -6,13 +9,7 @@ public partial class ContactsPage : ContentPage
     {
         InitializeComponent();
 
-        List<dynamic> contacts =
-        [
-            new { Name = "Pepa", Email = "Pepa@ehm.cz"},
-            new { Name = "Arnold", Email = "Arnold@ehm.cz"},
-            new { Name = "Telemín", Email = "Telemín@ehm.cz"}
-        ];
-        contactsList.ItemsSource = contacts;
+        contactsList.ItemsSource = ContactRepository.GetAll();
     }
 
     private void BtnEditContact_Clicked(object sender, EventArgs e)
@@ -29,7 +26,7 @@ public partial class ContactsPage : ContentPage
     {
         if (contactsList.SelectedItem is not null)
         {
-            DisplayAlert("Test", "ClickedItem", "Cancel");
+            Shell.Current.GoToAsync($"{nameof(EditContactPage)}?Id={(e.SelectedItem as Contact)?.Id}");
         }   
     }
     private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
