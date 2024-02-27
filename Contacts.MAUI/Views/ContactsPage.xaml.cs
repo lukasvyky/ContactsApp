@@ -24,4 +24,16 @@ public partial class ContactsPage : ContentPage
     {
         Shell.Current.GoToAsync(nameof(AddContactPage));
     }
+
+    private void ContactsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        if (contactsList.SelectedItem is not null)
+        {
+            DisplayAlert("Test", "ClickedItem", "Cancel");
+        }   
+    }
+    private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        contactsList.SelectedItem = null;
+    }
 }

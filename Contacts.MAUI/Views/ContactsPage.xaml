@@ -6,7 +6,10 @@
     <VerticalStackLayout Spacing="5">
         <ListView x:Name="contactsList" 
                   BackgroundColor="Transparent"
-                  RowHeight="70">
+                  RowHeight="70"
+                  ItemTapped="ContactsList_ItemTapped"
+                  ItemSelected="ContactsList_ItemSelected"
+                  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}"
