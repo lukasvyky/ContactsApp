@@ -3,54 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Contacts.MAUI.Views.EditContactPage"
+             xmlns:controls="clr-namespace:Contacts.MAUI.Views.Controls"
              Title="EditContactPage">
-    <VerticalStackLayout Spacing="10" Margin="0,30,0,0" WidthRequest="400">
 
-        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
-            <HorizontalStackLayout Spacing="10">
-                <Label Text="Name" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryName" VerticalOptions="Center">
-                    <Entry.Behaviors>
-                        <toolkit:TextValidationBehavior MinimumLength="2" Flags="ValidateOnAttaching,ValidateOnValueChanged" x:Name="nameValidator"/>
-                    </Entry.Behaviors>
-                </Entry>
-            </HorizontalStackLayout>
-        </Frame>
-
-        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
-            <HorizontalStackLayout Spacing="10">
-                <Label Text="Email" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryEmail" VerticalOptions="Center">
-                    <Entry.Behaviors>
-                        <toolkit:MultiValidationBehavior
-                            x:Name="emailValidator"
-                            Flags="ValidateOnAttaching,ValidateOnValueChanged">
-                            <toolkit:TextValidationBehavior
-                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                MinimumLength="6"
-                                toolkit:MultiValidationBehavior.Error="Email is required"/>
-                            <toolkit:EmailValidationBehavior
-                                 Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                toolkit:MultiValidationBehavior.Error="Email format is invalid"/>
-                        </toolkit:MultiValidationBehavior>
-                    </Entry.Behaviors>
-                </Entry>
-            </HorizontalStackLayout>
-        </Frame>
-
-        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
-            <HorizontalStackLayout Spacing="10">
-                <Label Text="Phone number" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryPhone" VerticalOptions="Center"></Entry>
-            </HorizontalStackLayout >
-        </Frame>
-
-        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
-            <HorizontalStackLayout Spacing="10">
-                <Label Text="Address" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry x:Name="entryAddress" VerticalOptions="Center"></Entry>
-            </HorizontalStackLayout>
-        </Frame>
-        <Button x:Name="btnUpdate" Text="Update" Clicked="BtnUpdate_Clicked"></Button>
-    </VerticalStackLayout>
+    <controls:ContactControl x:Name="contactCtrl" OnSave="BtnSave_Clicked" OnError="ContactCtrl_OnError">
+    </controls:ContactControl>
 </ContentPage>
