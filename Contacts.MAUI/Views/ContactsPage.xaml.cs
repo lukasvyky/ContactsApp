@@ -8,8 +8,6 @@ public partial class ContactsPage : ContentPage
     public ContactsPage()
     {
         InitializeComponent();
-
-        contactsList.ItemsSource = ContactRepository.GetAll();
     }
 
     private void BtnEditContact_Clicked(object sender, EventArgs e)
@@ -32,5 +30,11 @@ public partial class ContactsPage : ContentPage
     private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         contactsList.SelectedItem = null;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        contactsList.ItemsSource = ContactRepository.GetAll();
     }
 }

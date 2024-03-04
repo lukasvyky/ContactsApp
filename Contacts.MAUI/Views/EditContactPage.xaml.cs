@@ -12,12 +12,32 @@ public partial class EditContactPage : ContentPage
         set
         {
             Contact = ContactRepository.GetContact(int.Parse(value));
-            //contactName.Text = Contact?.Name;
+            if (Contact is not null)
+            {
+                entryName.Text = Contact.Name;
+                entryEmail.Text = Contact.Email;
+                entryPhone.Text = Contact.Phone;
+                entryAddress.Text = Contact.Address;
+            }
         }
     }
 
     public EditContactPage()
     {
         InitializeComponent();
+    }
+
+    private void BtnUpdate_Clicked(object sender, EventArgs e)
+    {
+        if (Contact is not null)
+        {
+            Contact.Name = entryName.Text;
+            Contact.Email = entryEmail.Text;
+            Contact.Phone = entryPhone.Text;
+            Contact.Address = entryAddress.Text;
+        }
+
+        ContactRepository.EditContact(Contact.Id,Contact); // this is not needed in case of in-memory collection
+        Shell.Current.GoToAsync("..");
     }
 }

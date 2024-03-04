@@ -8,29 +8,30 @@
         <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Name" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryName" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
 
         <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Email" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryEmail" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
 
         <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Phone number" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryPhone" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout >
         </Frame>
 
         <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Address" VerticalOptions="Center" WidthRequest="60"></Label>
-                <Entry VerticalOptions="Center"></Entry>
+                <Entry x:Name="entryAddress" VerticalOptions="Center"></Entry>
             </HorizontalStackLayout>
         </Frame>
+        <Button x:Name="btnUpdate" Text="Update" Clicked="BtnUpdate_Clicked"></Button>
     </VerticalStackLayout>
 </ContentPage>

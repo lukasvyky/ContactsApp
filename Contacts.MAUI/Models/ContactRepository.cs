@@ -17,5 +17,16 @@
         public static IEnumerable<Contact> GetAll() => _contacts;
 
         public static Contact? GetContact(int id) => _contacts.Find(c => c.Id == id);
+        public static void EditContact(int id, Contact contact)
+        {
+            var contactToUpdate = GetContact(id);
+            if (contactToUpdate is not null)
+            {
+                contactToUpdate.Email = contact.Email;
+                contactToUpdate.Name = contact.Name;
+                contactToUpdate.Phone = contact.Phone;
+                contactToUpdate.Address = contact.Address;
+            }
+        }
     }
 }
