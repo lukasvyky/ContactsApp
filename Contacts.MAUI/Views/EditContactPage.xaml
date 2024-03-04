@@ -3,7 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Contacts.MAUI.Views.EditContactPage"
              Title="EditContactPage">
-    <VerticalStackLayout>
-        <Label x:Name="contactName"></Label>
+    <VerticalStackLayout Spacing="10" Margin="0,30,0,0" WidthRequest="400">
+
+        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Name" VerticalOptions="Center" WidthRequest="60"></Label>
+                <Entry VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Email" VerticalOptions="Center" WidthRequest="60"></Label>
+                <Entry VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Phone number" VerticalOptions="Center" WidthRequest="60"></Label>
+                <Entry VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout >
+        </Frame>
+
+        <Frame Padding="10,2,10,2" BackgroundColor="MediumPurple">
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Address" VerticalOptions="Center" WidthRequest="60"></Label>
+                <Entry VerticalOptions="Center"></Entry>
+            </HorizontalStackLayout>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>

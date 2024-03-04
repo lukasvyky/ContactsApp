@@ -12,7 +12,7 @@ public partial class EditContactPage : ContentPage
         set
         {
             Contact = ContactRepository.GetContact(int.Parse(value));
-            contactName.Text = Contact?.Name;
+            //contactName.Text = Contact?.Name;
         }
     }
 
