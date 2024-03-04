@@ -29,6 +29,16 @@ public partial class EditContactPage : ContentPage
 
     private void BtnUpdate_Clicked(object sender, EventArgs e)
     {
+        if(nameValidator.IsNotValid)
+        {
+            DisplayAlert("Error", "Incorrect name format", "Back");
+        }
+        if (emailValidator.IsNotValid)
+        {
+            DisplayAlert("Error", String.Join("\n", emailValidator.Errors), "Back");
+            return;
+        }
+
         if (Contact is not null)
         {
             Contact.Name = entryName.Text;
