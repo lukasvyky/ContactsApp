@@ -1,4 +1,5 @@
 using Contacts.MAUI.Models;
+using System.Collections.ObjectModel;
 using Contact = Contacts.MAUI.Models.Contact;
 
 namespace Contacts.MAUI.Views;
@@ -35,6 +36,6 @@ public partial class ContactsPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        contactsList.ItemsSource = ContactRepository.GetAll();
+        contactsList.ItemsSource = new ObservableCollection<Contact>(ContactRepository.GetAll());
     }
 }
